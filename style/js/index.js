@@ -18,13 +18,13 @@ function startTime() {
     startTime()
   }, 500);
 
-  if (h == 8) {
+  if (h > 7) {
     document.body.style.backgroundColor = 'rgb(' + 255 + ',' + 255 + ',' + 255 + ')';
   }
-  if (h == 18) {
+  if (h > 17) {
     document.body.style.backgroundColor = 'rgb(' + 129 + ',' + 129 + ',' + 129 + ')';
   }
-  if (h == 23) {
+  if (h > 22) {
     document.body.style.backgroundColor = 'rgb(' + 33 + ',' + 33 + ',' + 33 + ')';
   }
 }
