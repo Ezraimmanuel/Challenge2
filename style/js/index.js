@@ -1,3 +1,12 @@
+$(function() {
+  // on load
+  checkTime();
+  startTime();
+  setDate();
+  animation();
+})
+
+
 function checkTime(i) {
   if (i < 10) {
     i = "0" + i;
@@ -20,15 +29,37 @@ function startTime() {
 
   if (h > 7) {
     document.body.style.backgroundColor = 'rgb(' + 255 + ',' + 255 + ',' + 255 + ')';
+    $('.infocontainer').css({
+      backgroundColor: "rgb(255,255,255)",
+      color: "black",
+
+    });
   }
   if (h > 17) {
     document.body.style.backgroundColor = 'rgb(' + 129 + ',' + 129 + ',' + 129 + ')';
+    $('.infocontainer').css({
+      backgroundColor: "rgb(129,129,129)",
+      color: "white",
+
+    });
   }
-  if (h > 22) {
+  if (h > 22 || h < 7) {
     document.body.style.backgroundColor = 'rgb(' + 33 + ',' + 33 + ',' + 33 + ')';
+    $('.infocontainer').css({
+      backgroundColor: "rgb(33,33,33)",
+      color: "white",
+
+    });
   }
 }
-startTime();
 
-var d = new Date();
-document.getElementById("date").innerHTML = d.toDateString();
+function setDate() {
+  var d = new Date();
+  document.getElementById("date").innerHTML = d.toDateString();
+}
+
+function animation() {
+  $("body").css({
+    opacity: 1,
+  });
+}
